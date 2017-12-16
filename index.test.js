@@ -18,3 +18,11 @@ it('does a thing', () => {
         {}
     );
 });
+
+it('does another thing', () => {
+    return run(
+        'a{a:hover, a:focus{display: block;}}',
+        'a{@media not all and (hover: none) {a:hover{display: block;}}a:focus{display: block;}}',
+        {}
+    );
+});
