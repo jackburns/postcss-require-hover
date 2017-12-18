@@ -1,10 +1,14 @@
 var postcss = require('postcss');
 
+function wrapInMediaQuery(node) {
+    return '@media not all and (hover: none) {' + node + '}';
+}
+
 module.exports = postcss.plugin('postcss-require-hover-support', function () {
     return function (root) {
         root.walkRules(function (rule) {
             if (rule.selector.indexOf(':hover') !== -1) {
-                var hoverClone = rule.clone();
+                var clone = rule.clone();
                 var hoverSelectors = [];
 
                 var selectors = rule.selectors.filter(function (selector) {
@@ -16,16 +20,11 @@ module.exports = postcss.plugin('postcss-require-hover-support', function () {
                 });
 
                 if (selectors.length > 0) {
-                    hoverClone.selectors = hoverSelectors;
+                    clone.selectors = hoverSelectors;
                     rule.selectors = selectors;
-                    rule.parent.prepend(
-                        '@media not all and (hover: none) {' + hoverClone + '}'
-                    );
+                    rule.parent.prepend(wrapInMediaQuery(clone));
                 } else {
-                    var normalClone = rule.clone();
-                    rule.replaceWith(
-                        '@media not all and (hover: none) {' + normalClone + '}'
-                    );
+                    rule.replaceWith(wrapInMediaQuery(clone));
                 }
             }
         });

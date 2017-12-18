@@ -26,3 +26,36 @@ it('does another thing', () => {
         {}
     );
 });
+
+it('wut', () => {
+    return run(
+        `.wrapper .modal .text-input--focused .text-input__label,.wrapper .modal .text-input:hover .text-input__label,.text-input--focused .text-input__label,.text-input:hover .text-input__label {
+        	color: #4a4a4a;
+    	}`,
+        `@media not all and (hover: none) {.wrapper .modal .text-input:hover .text-input__label,.text-input:hover .text-input__label {
+    	color: #4a4a4a;
+    	}}.wrapper .modal .text-input--focused .text-input__label,.text-input--focused .text-input__label {
+        	color: #4a4a4a;
+    	}`,
+        {}
+    );
+});
+
+it('really works', () => {
+    return run(
+        `.text-input--focused .text-input__label,
+	    .text-input:hover .text-input__label,
+	    .wrapper .modal .text-input--focused .text-input__label,
+	    .wrapper .modal .text-input:hover .text-input__label {
+	      color: #4a4a4a;
+	    }`,
+        `@media not all and (hover: none) {.text-input:hover .text-input__label,
+	    .wrapper .modal .text-input:hover .text-input__label {
+	      color: #4a4a4a;
+	    }}.text-input--focused .text-input__label,
+	    .wrapper .modal .text-input--focused .text-input__label {
+	      color: #4a4a4a;
+	    }`,
+        {}
+    );
+});
