@@ -11,7 +11,7 @@ function run(input, output, opts) {
         });
 }
 
-it('does a thing', () => {
+it('basic wrapper', () => {
     return run(
         'a{a:hover{display: block;}}',
         'a{@media not all and (hover: none) {a:hover{display: block;}}}',
@@ -19,7 +19,7 @@ it('does a thing', () => {
     );
 });
 
-it('does another thing', () => {
+it('one hover, one nonhover selector', () => {
     return run(
         'a{a:hover, a:focus{display: block;}}',
         'a{@media not all and (hover: none) {a:hover{display: block;}}a:focus{display: block;}}',
@@ -27,7 +27,7 @@ it('does another thing', () => {
     );
 });
 
-it('wut', () => {
+it('multiple hover selectors and nonhover selectors', () => {
     return run(
         `.wrapper .modal .text-input--focused .text-input__label,.wrapper .modal .text-input:hover .text-input__label,.text-input--focused .text-input__label,.text-input:hover .text-input__label {
         	color: #4a4a4a;
@@ -41,7 +41,7 @@ it('wut', () => {
     );
 });
 
-it('really works', () => {
+it('more multiple hover selectors and nonhover selectors', () => {
     return run(
         `.text-input--focused .text-input__label,
 	    .text-input:hover .text-input__label,
