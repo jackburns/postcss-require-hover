@@ -5,6 +5,7 @@
 [PostCSS] plugin that wraps hover selectors in a media media that's only valid on devices that support true hover events. The goal of this plugin is to prevent mobile browsers (mostly iOS) from getting their hover states "stuck" since hover.
 
 Original idea: https://www.quirksmode.org/blog/archives/2012/11/what_the_hells.html
+
 More explicit support for this feature: https://drafts.csswg.org/mediaqueries/#hover
 
 Tested:
