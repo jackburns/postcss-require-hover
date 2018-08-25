@@ -1,23 +1,36 @@
-# PostCSS Require Hover Support [![Build Status][ci-img]][ci]
-
-[PostCSS] plugin that wraps hover selectors in a media media that's only valid on devices that support true hover events..
+# PostCSS Require Hover Support
 
 [postcss]: https://github.com/postcss/postcss
-[ci-img]: https://travis-ci.org/raptiq/postcss-require-hover-support.svg
-[ci]: https://travis-ci.org/raptiq/postcss-require-hover-support
+
+[PostCSS] plugin that wraps hover selectors in a media media that's only valid on devices that support true hover events. The goal of this plugin is to prevent mobile browsers (mostly iOS) from getting their hover states "stuck" since hover.
+
+Original idea: https://www.quirksmode.org/blog/archives/2012/11/what_the_hells.html
+More explicit support for this feature: https://drafts.csswg.org/mediaqueries/#hover
+
+Tested:
+
+-   IE11
+-   Chrome
+-   Safari
+-   Firefox
+-   iOS - Safari/Chrome
+-   Android - Chrome
+
+## Example
 
 ```css
 .foo {
-    a{a:hover{display: block;}}
+    bar:hover {
+        display: block;
+    }
+}
 ```
 
 ```css
 .foo {
-    a {
-        @media not all and (hover: none) {
-            a:hover {
-                display: block;
-            }
+    @media not all and (hover: none), (-ms-high-contrast: none) {
+        bar:hover {
+            display: block;
         }
     }
 }

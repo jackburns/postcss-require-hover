@@ -1,7 +1,11 @@
 var postcss = require('postcss');
 
 function wrapInMediaQuery(node) {
-    return '@media not all and (hover: none) {' + node + '}';
+    return (
+        '@media not all and (hover: none), (-ms-high-contrast: none) {' +
+        node +
+        '}'
+    );
 }
 
 module.exports = postcss.plugin('postcss-require-hover-support', function () {
