@@ -1,4 +1,4 @@
-# PostCSS Require Hover Support
+# PostCSS Require Hover
 
 [postcss]: https://github.com/postcss/postcss
 
@@ -36,10 +36,16 @@ Tested:
 }
 ```
 
+## Installation
+
+```
+npm install postcss-require-hover
+```
+
 ## Usage
 
 ```js
-postcss([require("postcss-require-hover-support")]);
+postcss([require("postcss-require-hover")]);
 ```
 
 See [PostCSS] docs for examples for your environment.

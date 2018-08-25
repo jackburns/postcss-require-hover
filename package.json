@@ -1,6 +1,6 @@
 {
-  "name": "postcss-require-hover-support",
-  "version": "0.0.0",
+  "name": "postcss-require-hover",
+  "version": "0.1.0",
   "description": "PostCSS plugin that wraps hover selectors in a media media that's only valid on devices that support true hover events.",
   "keywords": [
     "postcss",
@@ -8,13 +8,13 @@
     "postcss-plugin",
     "hover"
   ],
-  "author": "Jack Burns <jack@raptiq.com>",
+  "author": "Jack Burns <code@jackburns.io>",
   "license": "MIT",
-  "repository": "raptiq/postcss-require-hover-support",
+  "repository": "raptiq/postcss-require-hover",
   "bugs": {
-    "url": "https://github.com/raptiq/postcss-require-hover-support/issues"
+    "url": "https://github.com/raptiq/postcss-require-hover/issues"
   },
-  "homepage": "https://github.com/raptiq/postcss-require-hover-support",
+  "homepage": "https://github.com/raptiq/postcss-require-hover",
   "dependencies": {
     "postcss": "^6.0.1"
   },

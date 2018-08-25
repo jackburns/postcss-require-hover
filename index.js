@@ -8,7 +8,7 @@ function wrapInMediaQuery(node) {
     );
 }
 
-module.exports = postcss.plugin('postcss-require-hover-support', function () {
+module.exports = postcss.plugin('postcss-require-hover', function () {
     return function (root) {
         root.walkRules(function (rule) {
             if (rule.selector.indexOf(':hover') !== -1) {
