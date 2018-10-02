@@ -1,3 +1,4 @@
+/* eslint-disable max-len */
 var postcss = require('postcss');
 
 var plugin = require('./');
@@ -21,7 +22,7 @@ it('basic wrapper', () => {
     return run(
         'a{a:hover{display: block;}}',
         `a{
-            @media not all and (hover: none), (-ms-high-contrast: none) {
+            @media (hover: hover), (-moz-touch-enabled: 0), (-ms-high-contrast: none), (-ms-high-contrast: active) {
                 a:hover{display: block;}
             }
         }`,
@@ -33,7 +34,7 @@ it('one hover, one nonhover selector', () => {
     return run(
         'a{a:hover, a:focus{display: block;}}',
         `a{
-            @media not all and (hover: none), (-ms-high-contrast: none) {
+            @media (hover: hover), (-moz-touch-enabled: 0), (-ms-high-contrast: none), (-ms-high-contrast: active) {
                 a:hover{display: block;}
             }
             a:focus{display: block;}
@@ -52,7 +53,7 @@ it('multiple hover selectors and nonhover selectors', () => {
         	color: #4a4a4a;
         }
         `,
-        `@media not all and (hover: none), (-ms-high-contrast: none) {
+        `@media (hover: hover), (-moz-touch-enabled: 0), (-ms-high-contrast: none), (-ms-high-contrast: active) {
             .wrapper .modal .text-input:hover .text-input__label,
             .text-input:hover .text-input__label {
                 color: #4a4a4a;
@@ -74,7 +75,7 @@ it('more multiple hover selectors and nonhover selectors', () => {
 	    .wrapper .modal .text-input:hover .text-input__label {
 	      color: #4a4a4a;
 	    }`,
-        `@media not all and (hover: none), (-ms-high-contrast: none) {
+        `@media (hover: hover), (-moz-touch-enabled: 0), (-ms-high-contrast: none), (-ms-high-contrast: active) {
             .text-input:hover .text-input__label, 
             .wrapper .modal .text-input:hover .text-input__label {
 	            color: #4a4a4a;
