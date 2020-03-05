@@ -8,13 +8,13 @@
     "postcss-plugin",
     "hover"
   ],
-  "author": "Jack Burns <code@jackburns.io>",
+  "author": "Jack Burns <github@jackburns.dev>",
   "license": "MIT",
-  "repository": "raptiq/postcss-require-hover",
+  "repository": "jackburns/postcss-require-hover",
   "bugs": {
-    "url": "https://github.com/raptiq/postcss-require-hover/issues"
+    "url": "https://github.com/jackburns/postcss-require-hover/issues"
   },
-  "homepage": "https://github.com/raptiq/postcss-require-hover",
+  "homepage": "https://github.com/jackburns/postcss-require-hover",
   "dependencies": {
     "postcss": "^6.0.1"
   },
