@@ -29,7 +29,7 @@ Tested:
 
 ```css
 .foo {
-    @media not all and (hover: none), (-ms-high-contrast: none) {
+    @media (hover: hover), (-moz-touch-enabled: 0), (-ms-high-contrast: none), (-ms-high-contrast: active) {
         bar:hover {
             display: block;
         }
